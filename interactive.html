@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Жыцень ~ Вясновае прачынанне</title>
+  <link rel="icon" type="image/png" href="img/logo/Slide.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body id="top">
+
+  <header class="header">
+    <div class="header-content">
+      <div class="Mainp">
+        <a href="index.html" class="header-logo menu-item logo">Жыцень</a>
+        <img src="img/logo/OIG4.x0TRXX9ENTV11Wtg-removebg-preview.png" 
+             alt="Лагатып Жыценя" 
+             class="header-logo-img">
+      </div>
+      <nav class="header-menu">
+        <a href="mythology.html" class="menu-item">Міфалогія</a>
+        <span class="menu-divider">|</span>
+        <a href="memori.html" class="menu-item">Помнік</a>
+        <span class="menu-divider">|</span>
+        <a href="maps.html" class="menu-item">Размяшчэнне</a>
+        <span class="menu-divider">|</span>
+        <a href="logistic.html" class="menu-item">Лагістыка</a>
+        <span class="menu-divider">|</span>
+        <a href="merch.html" class="menu-item">Артэфакты Жыценя</a>
+        <span class="menu-divider">|</span>
+        <a href="interactive.html" class="menu-item">Вясновае прачынанне</a>
+        <span class="menu-divider">|</span>
+        <a href="creators.html" class="menu-item">Аўтары</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="spring-intro">
+    <div class="spring-glass-container">
+        <div class="spring-card">
+            <h2 class="spring-title">Вясновае прачынанне</h2>
+            <!-- Кнопка з плаўнай пракруткай -->
+            <button class="uni-cta-btn" onclick="document.getElementById('quiz-section').scrollIntoView({behavior: 'smooth'})">
+                Наведаць фестываль
+            </button>
+        </div>
+    </div>
+</section>
+
+<!-- Секцыя з даданым ID для пракруткі -->
+<section class="quiz-section" id="quiz-section">
+    <div class="quiz-glass-container">
+        <div class="quiz-header">
+            <h2>Зерны ісціны: Міфы Жыценя</h2>
+            <div class="slide-counter">Пытанне 1/9</div>
+        </div>
+        
+        <div class="quiz-progress">
+            <div class="progress-fill"></div>
+        </div>
+        
+        <div class="quiz-slides"></div>
+
+        <div class="quiz-controls">
+            <button class="nav-btn prev-btn" onclick="prevQuestion()" disabled>← Назад</button>
+            <div class="hint-container">
+                <button class="hint-btn" onclick="showHint()">?</button>
+                <div class="hint-text hidden"></div>
+            </div>
+            <button class="nav-btn next-btn" onclick="nextQuestion()" disabled>Далей →</button>
+        </div>
+
+        <div class="quiz-result hidden">
+            <h2>Ваш вынік</h2>
+            <div class="result-score">0/9</div>
+            <p class="result-text"></p>
+            <button class="uni-cta-btn" onclick="restartQuiz()">Пачаць занова</button>
+        </div>
+    </div>
+</section>
+
+<section class="logi-banner"> 
+  <div class="logi-banner__frame"> 
+  <div class="logi-banner__content-panel"> 
+  <h1 class="logi-banner__primary-heading">Віктарына для вас</h1> 
+  <div class="logi-banner__media-wrapper"> 
+  <img src="img/interactive/qrcode_198639188_b39c5af8c8e828dfeaba09560a902a5e (1).png" 
+  alt="Лагістыка" 
+  class="logi-banner__dynamic-visual"> 
+  </div> 
+  </div> 
+  </div> 
+  </section>
+
+<!-- Пятнашкі -->
+<div class="game-container">
+    <div class="game-header">
+        <h1 class="game-title">🌾 Каласкі-пятнашкі</h1>
+        <div class="game-divider"></div>
+        <div class="game-description">
+            <div class="description-card">
+                <div class="wheat-icon">🌾</div>
+                <p class="description-text">Перасоўвайце каласкі на вольнае месца, аднаўляючы правільны парадак.</p>
+            </div>
+            <div class="description-card">
+                <div class="wheat-icon">🌾</div>
+                <p class="description-text">Абярыце памер поля і пачніце новую гульню!</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-controls">
+        <div class="control-group">
+            <label for="fieldSize" class="control-label">Памер поля:</label>
+            <div class="size-input-container">
+                <input type="number" 
+                       min="2" 
+                       max="6" 
+                       id="fieldSize" 
+                       value="4"
+                       class="size-input">
+                <span class="input-icon"></span>
+            </div>
+        </div>
+        <button id="generateField" class="game-button">
+            <span class="button-icon">🔄</span>
+            Новая гульня
+        </button>
+    </div>
+
+    <div class="game-board">
+        <div class="board-inner">
+            <table id="myTable"></table>
+        </div>
+    </div>
+    <canvas id="myCanvas"></canvas>
+</div>
+
+<footer class="transparent-footer">
+  <div class="footer-container">
+    <div class="footer-column">
+      <div class="company-info">
+        <a href="#" class="company-name" onclick="scrollToTop(event)">Жыцень</a>
+        <p class="slogan">Міфалагічная істота</p>
+      </div>
+    </div>
+    <div class="footer-column">
+      <div class="footer-logo">
+        <!-- Убрана оборачивающая ссылка -->
+        <div class="logo-wrapper">
+          <img src="img/logo/OIG4.x0TRXX9ENTV11Wtg-removebg-preview.png" 
+               alt="Логотип Житень" 
+               class="logo-image">
+        </div>
+      </div>
+    </div>
+    <div class="footer-column">
+      <div class="contact-info">
+        <div class="contact-line">
+          <span class="contact-icon">📱</span>
+          <a href="tel:+375443216798" class="contact-item">+375-44-321-67-98</a>
+        </div>
+        <div class="contact-line">
+          <span class="contact-icon">✉️</span>
+          <a href="mailto:Zhitsen_Project@gmail.com" class="contact-item">Zhitsen_Project@gmail.com</a>
+        </div>
+        <div class="contact-line">
+          <span class="contact-icon">📬</span>
+          <span class="contact-item">Наваколле ракі Беседзь, вёска Батаева, Хоцімскі раён</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+  <script src="js/animathion_p.js"></script>
+  <script src="js/header_animation.js"></script>
+  <script src="js/quiz_game.js"></script>
+  <script src="js/pyatnashki.js"></script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Жыцень</title>
+  <link rel="icon" type="image/png" href="img/logo/Slide.png">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="header">
+    <div class="header-content">
+      <div class="Mainp">
+        <a href="index.html" class="header-logo menu-item logo">Жыцень</a>
+        <img src="img/logo/OIG4.x0TRXX9ENTV11Wtg-removebg-preview.png" 
+             alt="Лагатып Жыценя" 
+             class="header-logo-img">
+      </div>
+      <nav class="header-menu">
+        <a href="mythology.html" class="menu-item">Міфалогія</a>
+        <span class="menu-divider">|</span>
+        <a href="memori.html" class="menu-item">Помнік</a>
+        <span class="menu-divider">|</span>
+        <a href="maps.html" class="menu-item">Размяшчэнне</a>
+        <span class="menu-divider">|</span>
+        <a href="logistic.html" class="menu-item">Лагістыка</a>
+        <span class="menu-divider">|</span>
+        <a href="merch.html" class="menu-item">Артэфакты Жыценя</a>
+        <span class="menu-divider">|</span>
+        <a href="interactive.html" class="menu-item">Вясновае прачынанне</a>
+        <span class="menu-divider">|</span>
+        <a href="creators.html" class="menu-item">Аўтары</a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="welcomeOverlay" class="welcome-overlay">
+    <section class="welcome-modal">
+      <div class="welcome-content">
+        <h2 class="welcome-title">Вітаем у свете Жыценя</h2>
+        <p class="welcome-text">
+          Вы ўваходзіце ў сакральную прастору старажытных традыцый і міфалагічных вобразаў.<br>
+          Прыгажуня прыроды і цыклы жыцця чакаюць вашых даследаванняў
+        </p>
+        <button onclick="closeWelcome()" class="welcome-btn">
+          Пачаць падарожжа 
+          <span class="btn-arrow"></span>
+        </button>
+      </div>
+    </section>
+  </section>
+
+  <section class="main-section" id="main">
+    <div class="particle-layer"></div>
+    <h1 class="main-title">Усё пра Жыценя</h1>
+    <div class="content-wrapper">
+        <div class="text-block animate-left">
+            <div class="content">
+                <h2 class="myth-header">Жыцень</h2>
+                <p class="description">
+                    Старажытны дух прыроды, які ўвасабляе цыкл жыцця і смерці. 
+                    Сімбіёз расліннага і жывёльнага свету, што падтрымлівае 
+                    раўнавагу экасістэмы на працягу тысячагоддзяў.
+                </p>
+                <ul class="features-list">
+                    <li class="feature-item">Ахоўнік лесных сцежак</li>
+                    <li class="feature-item">Валадар каранёвай сістэмы</li>
+                    <li class="feature-item">Ахоўнік насеннага фонду</li>
+                    <li class="feature-item">Рэгулятар фотасінтэзу</li>
+                </ul>
+            </div>
+        </div>
+        <div class="image-block animate-right">
+            <img src="img/main_s/Жыцень.jpg" 
+                 alt="Увасабленне Жыценя" 
+                 class="spirit-image">
+        </div>
+    </div>
+    <button class="uni-cta-btn" onclick="document.getElementById('mythology').scrollIntoView({behavior: 'smooth'})">Даследаваць</button>
+  </section>
+
+  <section id="mythology" class="mythology-section">
+    <div class="section-container">
+      <h2 class="section-title">Народныя апавяданні пра Жыценя</h2>
+      <div class="mythology-grid">
+        <div class="myth-card">
+          <div class="myth-icon">
+            <img src="img/Graphic/Колосья.png" alt="Калоскі пшаніцы">
+          </div>
+          <h3>Сімвал ураджаю</h3>
+          <p>Дух спелых нів, ахоўнік зерневых культур. Паводле паданняў з'яўляецца на полі, калі калоскі напаўняюцца залатым бляскам.</p>
+        </div>
+        <div class="myth-card">
+          <div class="myth-icon">
+            <img src="img/Graphic/Весна.png" alt="Вясна">
+          </div>
+          <h3>Прачынанне жыцця</h3>
+          <p>З першымі ручаямі ён пачынае танцаваць на пратаянах, прачынаючы прыроду. Яго сляды — першыя праросткі.</p>
+        </div>
+        <div class="myth-card">
+          <div class="myth-icon">
+            <img src="img/Graphic/Шляпа.png" alt="Саломенны капялюш">
+          </div>
+          <h3>Ахоўнік жняцоў</h3>
+          <p>Ахоўвае працаўнікоў ад сонечнага ўдару. У яго капелюшы, сплеценым з апошняга снопа, захоўваецца сіла зямлі.</p>
+        </div>
+        <div class="myth-card">
+          <div class="myth-icon">
+            <img src="img/Graphic/Плодородие.png" alt="Плоднасць">
+          </div>
+          <h3>Крыніца ўрадлівасці</h3>
+          <p>У месцах яго рытуальных хараводаў зямля дае ўтройчы ўраджай. У каранёх дубоў захоўваецца "жылая вада".</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <footer class="transparent-footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <div class="company-info">
+          <a href="#" class="company-name" onclick="scrollToTop(event)">Жыцень</a>
+          <p class="slogan">Міфалагічная істота</p>
+        </div>
+      </div>
+      <div class="footer-column">
+        <div class="footer-logo">
+          <!-- Убрана оборачивающая ссылка -->
+          <div class="logo-wrapper">
+            <img src="img/logo/OIG4.x0TRXX9ENTV11Wtg-removebg-preview.png" 
+                 alt="Логотип Житень" 
+                 class="logo-image">
+          </div>
+        </div>
+      </div>
+      <div class="footer-column">
+        <div class="contact-info">
+          <div class="contact-line">
+            <span class="contact-icon">📱</span>
+            <a href="tel:+375443216798" class="contact-item">+375-44-321-67-98</a>
+          </div>
+          <div class="contact-line">
+            <span class="contact-icon">✉️</span>
+            <a href="mailto:Zhitsen_Project@gmail.com" class="contact-item">Zhitsen_Project@gmail.com</a>
+          </div>
+          <div class="contact-line">
+            <span class="contact-icon">📬</span>
+            <span class="contact-item">Наваколле ракі Беседзь, вёска Батаева, Хоцімскі раён</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <script src="js/blackwindow.js"></script>
+  <script src="js/scrool.js"></script>
+  <script src="js/animathion_p.js"></script>
+  <script src="js/header_animation.js"></script>
+</body>
+</html>

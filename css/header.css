@@ -1,0 +1,134 @@
+/*Обязательно везде*/
+.header {
+    background: #333;
+    position: fixed;
+    z-index: 1000;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    border-radius: 50px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    transition: all 0.5s ease;
+    width: 200px;
+    height: 80px;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .header.expanded {
+    width: calc(100% - 40px);
+    height: 100px;
+    left: 20px;
+    transform: none;
+    width: 95%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .header-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+    gap: 50px;
+    transition: all 0.3s ease;
+  }
+  
+  .header:not(.expanded) .header-menu {
+    display: none;
+  }
+  
+  .header:not(.expanded) .header-content {
+    gap: 15px;
+    padding: 0;
+  }
+  
+  .Mainp {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .header-logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+    transition: all 0.3s ease;
+    text-decoration: none;
+  }
+  
+  .header:not(.expanded) .header-logo {
+    font-size: 20px;
+  }
+  
+  .header-logo:hover {
+    color: #ff9800;
+    transform: scale(1.05);
+  }
+  
+  .header-logo-img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 50%;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+  }
+  
+  .header:not(.expanded) .header-logo-img {
+    width: 40px;
+    height: 40px;
+  }
+  
+  .header-logo-img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  }
+  
+  .header-menu {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+    flex-wrap: nowrap;
+  }
+  
+  .menu-item {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 8px 0;
+    white-space: nowrap;
+  }
+  
+  .menu-item:hover {
+    color: #ff9800;
+    transform: translateY(-2px);
+  }
+  
+  .menu-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ff9800;
+    transition: width 0.3s ease;
+  }
+  
+  .menu-item:hover::after {
+    width: 100%;
+  }
+  
+  .menu-divider {
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 24px;
+    user-select: none;
+  }
+  /*Конец*/

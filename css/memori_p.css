@@ -1,0 +1,474 @@
+/* Вторая секция - Моделька полностью готовая секция
+не ломать её */
+/* Панель реликвии */
+.relic-panel {
+  min-height: 120vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+}
+
+.antiquity-container {
+  border-radius: 24px;
+  padding: 5rem 4rem;
+  width: 90%;
+  max-width: 800px;
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(12px) saturate(160%);
+  border: 2px solid rgba(175, 155, 120, 0.25);
+  box-shadow: 
+      0 24px 60px rgba(100, 80, 50, 0.15),
+      inset 0 6px 24px rgba(255, 255, 255, 0.2);
+}
+
+
+
+.eternal-header {
+  font-size: 3.2rem;
+  color: #3a3429;
+  margin: 0 auto 2rem;
+  text-align: center;
+  letter-spacing: -0.03em;
+  text-shadow: 
+      2px 2px 0px rgba(255,255,255,0.5),
+      0 4px 12px rgba(100, 80, 50, 0.2);
+}
+
+.uni-cta-btn {
+  padding: 1.6rem 4.8rem;
+  background: linear-gradient(
+      45deg, 
+      rgba(255, 154, 0, 0.9) 0%, 
+      rgba(255, 107, 107, 0.9) 100%
+  );
+  border: none;
+  border-radius: 42px;
+  color: white;
+  font-size: 1.3rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 
+      0 6px 24px rgba(255, 154, 0, 0.25),
+      0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.uni-cta-btn::after {
+  content: '';
+  position: absolute;
+  top: -150%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.25),
+      transparent
+  );
+  transform: rotate(25deg);
+  transition: 0.6s;
+}
+
+.uni-cta-btn:hover {
+  transform: scale(1.06) translateY(-2px);
+  box-shadow: 
+      0 8px 32px rgba(255, 154, 0, 0.4),
+      0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.uni-cta-btn:hover::after {
+  top: 50%;
+  left: 50%;
+}
+
+.uni-cta-btn:active {
+  transform: scale(0.96);
+  filter: brightness(0.9);
+}
+
+/* Основной блок секции */
+.memori_p {
+  padding: 4rem 2rem;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 30px;
+  width: calc(100% - 40px);
+  margin: 80px auto 0;
+  box-shadow: 
+    0 8px 32px rgba(255, 216, 168, 0.1),
+    0 -8px 32px rgba(172, 182, 229, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+/* Контейнер для равномерного распределения блоков */
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  align-items: stretch;
+}
+
+/* Текстовый блок */
+.text-block {
+  display: flex;
+  align-items: center;
+  height: 100%;
+  min-height: 0;
+}
+
+/* Каркас описания */
+.description-frame {
+  text-align: center;
+  background: linear-gradient(
+    135deg, 
+    rgba(255, 216, 168, 0.2), 
+    rgba(172, 182, 229, 0.2)
+  );
+  padding: 2.5rem;
+  border-radius: 20px;
+  box-shadow: 
+    0 8px 32px rgba(0,0,0,0.05),
+    inset 2px 2px 4px rgba(255,255,255,0.3);
+  transform: rotate(-2deg);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Заголовок секции */
+h2 {
+  color: #333;
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+h2::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: #ff9a00;
+}
+
+/* Контейнер для двух списков */
+.lists-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+/* Заголовки списков */
+.spec-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Стили списков */
+.features-list {
+  list-style: none;
+  margin: 0;
+  padding-left: 1rem;
+}
+
+.features-list li {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 216, 168, 0.15),
+    rgba(172, 182, 229, 0.15)
+  );
+  padding: 12px 20px;
+  margin: 12px 0;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.features-list li:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 216, 168, 0.3),
+    rgba(172, 182, 229, 0.3)
+  );
+  transform: translateX(10px);
+  box-shadow: 
+    0 4px 12px rgba(255, 152, 0, 0.1),
+    0 -4px 12px rgba(172, 182, 229, 0.1);
+}
+
+/* Технические характеристики */
+.tech-specs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.spec-item {
+  background: linear-gradient(
+    135deg,
+    rgba(51, 51, 51, 0.9),
+    rgba(30, 30, 30, 0.9)
+  );
+  color: white;
+  padding: 1.2rem;
+  border-radius: 12px;
+  box-shadow: 
+    0 4px 12px rgba(0,0,0,0.15),
+    inset 0 2px 4px rgba(255,255,255,0.1);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.spec-item span {
+  font-size: 0.9rem;
+  opacity: 0.8;
+}
+
+.spec-item strong {
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+}
+
+.spec-item:hover {
+  transform: scale(1.02);
+}
+
+/* Блок с моделью */
+.model-container {
+  aspect-ratio: 1/1;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px);
+  border-radius: 30px;
+  box-shadow: 
+    0 8px 32px rgba(255, 216, 168, 0.1),
+    0 -8px 32px rgba(172, 182, 229, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  display: flex;
+  position: relative;
+}
+
+/* Sketchfab обертка */
+.sketchfab-embed-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  border-radius: 25px;
+}
+
+.sketchfab-embed-wrapper iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 25px;
+}
+
+/* Подпись модели */
+.model-caption {
+  font-size: 13px;
+  font-weight: normal;
+  margin: 5px;
+  color: #4A4A4A;
+  text-align: center;
+}
+
+.model-caption a {
+  font-weight: bold;
+  color: #1CAAD9;
+  text-decoration: none;
+}
+
+/* Адаптив для мобильных устройств */
+@media (max-width: 768px) {
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .model-container {
+    aspect-ratio: 1/1;
+    order: -1;
+  }
+  
+  .text-block {
+    height: auto;
+  }
+  
+  .memori_p {
+    padding: 2rem 1rem;
+    margin: 40px auto 0;
+  }
+  
+  h2 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Аниммация модельки при смене стиля страницы */
+.model-container {
+  overflow: hidden;
+  border-radius: 12px;
+  box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.sketchfab-embed-wrapper {
+  transition: 
+      transform 0.7s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 0.4s ease;
+}
+
+.model-container.fade-out .sketchfab-embed-wrapper {
+  transform: translateY(40px) scale(0.98);
+  opacity: 0;
+}
+
+.model-container.fade-in .sketchfab-embed-wrapper {
+  transform: translateY(0) scale(1);
+  opacity: 1;
+}
+
+.loading-overlay {
+  background: rgba(255,255,255,0.95);
+  display: grid;
+  place-items: center;
+}
+
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  position: relative;
+}
+
+.loading-spinner::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 3px solid transparent;
+  border-top-color: #3498db;
+  border-bottom-color: #3498db;
+  animation: spin 1s ease-in-out infinite;
+}
+
+/* Кнопки времена года */
+.variations-section {
+  text-align: center;
+  margin-top: 2rem; /* Добавлен отступ сверху */
+  margin-bottom: 3rem;
+  width: 100%;
+}
+
+.variations-title {
+  font-size: 3rem;
+  color: #3a3429;
+  margin-top: 1.5rem;
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+}
+
+.variations-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100px;
+  height: 3px;
+}
+
+.season-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.season-btn {
+  padding: 0.8rem 1.8rem;
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.2);
+  color: #3a3429;
+  border: 1px solid rgba(175, 155, 120, 0.5);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.season-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.season-btn.active {
+  background: linear-gradient(45deg, #ff9a00, #ff6b6b);
+  color: white;
+  box-shadow: 0 4px 12px rgba(255, 107, 107, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+@media (max-width: 480px) {
+  .season-buttons {
+      flex-direction: row;
+      justify-content: center;
+  }
+  .season-btn {
+      padding: 0.6rem 1.2rem;
+      font-size: 0.9rem;
+  }
+}
+
+/* Темы фона */
+body {
+  min-height: 100vh;
+  margin: 0;
+  transition: background 0.4s ease;
+}
+
+body[data-season="summer"] {
+  background: linear-gradient(
+    160deg,
+    #FFF3B0 0%,    /* Мягкий солнечный желтый */
+    #B3E5FC 30%,   /* Воздушно-голубой (приглушенный на 15%) */
+    #66BB6A 60%,   /* Сочная зелень (насыщенность +20%) */
+    #E8F5E9 100%   /* Светлый фисташковый для плавного завершения */
+  );
+}
+
+body[data-season="winter"] {
+  background: linear-gradient(
+    160deg,
+    #F0F8FF 0%,    
+    #D4EFF7 20%,  
+    #9ACFE8 45%,   
+    #7DAECA 70%,  
+    #E6F4FF 100%   
+  );
+}

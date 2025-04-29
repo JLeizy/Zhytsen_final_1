@@ -1,0 +1,218 @@
+/* style.css */
+
+/* Секция 1: Интро с кнопкой */
+.location-intro {
+    min-height: 120vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4rem;
+    text-align: center;
+    padding-bottom: 15vh;
+}
+
+.location-glass-container {
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(25px) saturate(180%);
+    border-radius: 35px;
+    padding: 4rem 3rem;
+    width: 90%;
+    max-width: 800px;
+    margin: 0 auto;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3),
+                inset 0 6px 24px rgba(255, 255, 255, 0.05);
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.location-glass-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 28px 72px rgba(0, 0, 0, 0.35),
+                inset 0 8px 28px rgba(255, 255, 255, 0.08);
+}
+
+.location-title {
+    font-size: 3.5rem;
+    margin: 0 auto 3rem;
+    line-height: 1.2;
+    color: #000000;
+    text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
+    letter-spacing: -0.5px;
+    max-width: 700px;
+    font-weight: 700;
+}
+
+/* Кнопка Посетить */
+.uni-cta-btn {
+    padding: 1.6rem 5rem;
+    background: linear-gradient(
+        45deg, 
+        rgba(255, 154, 0, 0.9) 0%, 
+        rgba(255, 107, 107, 0.9) 100%
+    );
+    border: none;
+    border-radius: 45px;
+    color: white;
+    font-size: 1.4rem;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 
+        0 6px 24px rgba(255, 154, 0, 0.25),
+        0 2px 8px rgba(0, 0, 0, 0.15);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.uni-cta-btn::after {
+    content: '';
+    position: absolute;
+    top: -150%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.25),
+        transparent
+    );
+    transform: rotate(25deg);
+    transition: 0.6s;
+}
+
+.uni-cta-btn:hover {
+    transform: scale(1.06) translateY(-2px);
+    box-shadow: 
+        0 8px 32px rgba(255, 154, 0, 0.4),
+        0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.uni-cta-btn:hover::after {
+    top: 50%;
+    left: 50%;
+}
+
+.uni-cta-btn:active {
+    transform: scale(0.96);
+    filter: brightness(0.9);
+}
+
+/*Преза из канвы*/
+/* Стили для секции */
+.interactive-embed-section {
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .embed-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    border-radius: 28px;
+    overflow: hidden;
+    box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+    border: 1px solid rgba(158, 207, 141, 0.3);
+  }
+  
+  .embed-wrapper {
+    position: relative;
+    padding-top: 56.25%;
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+  }
+  
+  .myth-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
+  
+  .embed-link {
+    display: inline-block;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(45deg, 
+      rgba(255, 154, 0, 0.9) 0%, 
+      rgba(255, 107, 107, 0.9) 100%);
+    border-radius: 30px;
+    color: white;
+    font-size: 1.1rem;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+    z-index: 10;
+    box-shadow: 0 4px 15px rgba(255, 154, 0, 0.25);
+  }
+  
+  .embed-link:hover {
+    transform: translateY(-2px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+  }
+  
+  /* Анимации */
+  .animate-pop {
+    animation: popIn 1s ease-out forwards;
+  }
+  
+  @keyframes popIn {
+    0% { transform: scale(0.95); opacity: 0; }
+    100% { transform: scale(1); opacity: 1; }
+  }
+  
+  /* Адаптивность */
+  @media (max-width: 768px) {
+    .interactive-embed-section {
+      padding: 2rem 1rem;
+    }
+    
+    .embed-container {
+      border-radius: 18px;
+    }
+    
+    .embed-link {
+      bottom: 10px;
+      right: 10px;
+      padding: 0.6rem 1.5rem;
+      font-size: 0.9rem;
+    }
+  }
+
+/* Секция 2: Карта и описание */
+.location-geo-section {
+    padding: 8rem 2rem 4rem; /* Увеличен верхний padding */
+    max-width: 1400px;
+    margin: 0 auto;
+    scroll-margin-top: 80px; /* Учет фиксированного хедера */
+}
+
+.location-geo-container {
+    display: flex;
+    height: 650px;
+    border-radius: 25px;
+    overflow: hidden;
+    background: linear-gradient(45deg, 
+      rgba(255,255,255,0.1), 
+      rgba(255,255,255,0.2));
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+}
+
+/* Карта */
+.location-geo-map {
+    flex: 1;
+    position: relative;
+    border-right: 2px solid rgba(255,255,255,0.2);
+}
+
+.location-geo-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    filter: grayscale(10%) contrast(110%);
+}

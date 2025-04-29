@@ -1,0 +1,696 @@
+/* Intro */
+.artifacts-intro {
+  min-height: 120vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem;
+  text-align: center;
+  padding-bottom: 15vh;
+}
+
+.artifacts-glass-container {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(25px) saturate(180%);
+  border-radius: 28px;
+  padding: 4rem 2rem;
+  width: 90%;
+  max-width: 720px;
+  margin: 0 auto;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.2),
+              inset 0 6px 24px rgba(255, 255, 255, 0.1);
+  transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.artifacts-title {
+  font-size: 3.5rem;
+  margin: 0 auto 3rem;
+  line-height: 1.2;
+  color: #000000;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
+  letter-spacing: -0.5px;
+  max-width: 700px;
+  font-weight: 700;
+}
+
+/* Общие стили кнопки (остаются без изменений) */
+.uni-cta-btn {
+  padding: 1.6rem 5rem;
+  background: linear-gradient(
+      45deg, 
+      rgba(255, 154, 0, 0.9) 0%, 
+      rgba(255, 107, 107, 0.9) 100%
+  );
+  border: none;
+  border-radius: 45px;
+  color: white;
+  font-size: 1.4rem;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+  box-shadow: 
+      0 6px 24px rgba(255, 154, 0, 0.25),
+      0 2px 8px rgba(0, 0, 0, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.uni-cta-btn::after {
+  content: '';
+  position: absolute;
+  top: -150%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.25),
+      transparent
+  );
+  transform: rotate(25deg);
+  transition: 0.6s;
+}
+
+.uni-cta-btn:hover {
+  transform: scale(1.06) translateY(-2px);
+  box-shadow: 
+      0 8px 32px rgba(255, 154, 0, 0.4),
+      0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.uni-cta-btn:hover::after {
+  top: 50%;
+  left: 50%;
+}
+
+.uni-cta-btn:active {
+  transform: scale(0.96);
+  filter: brightness(0.9);
+}
+
+/* Секция с презентацией (остается без изменений) */
+.interactive-embed-section {
+  padding: 4rem 2rem;
+  position: relative;
+  z-index: 2;
+}
+
+.embed-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+  border: 1px solid rgba(158, 207, 141, 0.3);
+}
+
+.embed-wrapper {
+  position: relative;
+  padding-top: 56.25%;
+  background: rgba(255,255,255,0.05);
+  backdrop-filter: blur(12px);
+}
+
+.myth-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.embed-link {
+  display: inline-block;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(45deg, 
+    rgba(255, 154, 0, 0.9) 0%, 
+    rgba(255, 107, 107, 0.9) 100%);
+  border-radius: 30px;
+  color: white;
+  font-size: 1.1rem;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  z-index: 10;
+  box-shadow: 0 4px 15px rgba(255, 154, 0, 0.25);
+}
+
+.embed-link:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.4);
+}
+
+/* Анимации */
+.animate-pop {
+  animation: popIn 1s ease-out forwards;
+}
+
+@keyframes popIn {
+  0% { transform: scale(0.95); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .artifacts-intro {
+      padding: 2rem;
+      min-height: 100vh;
+      padding-bottom: 10vh;
+  }
+  
+  .artifacts-title {
+      font-size: 2.4rem;
+      max-width: 90%;
+      margin-bottom: 2rem;
+  }
+  
+  .interactive-embed-section {
+      padding: 2rem 1rem;
+  }
+  
+  .embed-container {
+      border-radius: 18px;
+  }
+  
+  .embed-link {
+      bottom: 10px;
+      right: 10px;
+      padding: 0.6rem 1.5rem;
+      font-size: 0.9rem;
+  }
+  
+  .uni-cta-btn {
+      padding: 1.2rem 3.5rem;
+      font-size: 1.2rem;
+  }
+}
+
+/* Основные стили мерча */
+.merch-section {
+  position: relative;
+  padding: 8rem 2rem;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(25px);
+  border-radius: 30px;
+  margin: 5rem auto;
+  width: calc(100% - 40px);
+  max-width: 1700px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    0 8px 32px rgba(0,0,0,0.1),
+    inset 0 4px 12px rgba(255,255,255,0.05);
+}
+
+.section-title {
+  font-size: 3.5rem;
+  text-align: center;
+  color: #000000;
+  margin-bottom: 4rem;
+  text-shadow: 0 2px 4px rgba(255, 255, 255, 0.3);
+}
+
+.merch-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2.5rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.merch-card {
+  background: rgba(255,255,255,0.03);
+  backdrop-filter: blur(10px);
+  border-radius: 25px;
+  padding: 1.5rem;
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(255,255,255,0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.merch-card:hover {
+  transform: translateY(-10px);
+}
+
+/* Изменения только здесь */
+.merch-image {
+  width: 100%;
+  aspect-ratio: 1/1;
+  height: 380px;
+  margin: 0 auto 2rem;
+  max-width: 420px;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  border: 2px solid rgba(0,0,0,0.1);
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,0.2);
+}
+
+.merch-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+  padding: 2px;
+}
+
+.merch-card:hover .merch-image img {
+  transform: scale(1.05);
+}
+
+.merch-card h3 {
+  color: #333;
+  font-size: 1.6rem;
+  margin-bottom: 1.2rem;
+  text-align: center;
+  min-height: 60px;
+  line-height: 1.3;
+}
+
+.merch-footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 0 0.5rem;
+}
+
+.merch-price {
+  color: orange;
+  font-size: 1.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+.merch-buttons {
+  display: flex;
+  gap: 1rem;
+  width: 100%;
+}
+
+.merch-btn {
+  flex: 1;
+  border: none;
+  border-radius: 25px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 1.1rem;
+  min-width: 120px;
+}
+
+.details-btn {
+  background: rgba(0,0,0,0.08);
+  color: #333;
+  border: 1px solid rgba(0,0,0,0.1);
+}
+
+.details-btn:hover {
+  background: rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+}
+
+.buy-btn {
+  background: linear-gradient(45deg, #ff9a00, #ff6b6b);
+  color: white;
+  position: relative;
+}
+
+.buy-btn:hover {
+  box-shadow: 0 4px 15px rgba(255,107,107,0.3);
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1200px) {
+  .merch-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+  }
+  
+  .merch-image {
+    height: 320px;
+    max-width: 360px;
+  }
+}
+
+@media (max-width: 992px) {
+  .merch-image {
+    height: 280px;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  .merch-section {
+    padding: 4rem 1rem;
+    margin: 3rem auto;
+  }
+  
+  .section-title {
+    font-size: 2.5rem;
+  }
+  
+  .merch-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  
+  .merch-image {
+    height: 340px;
+    max-width: 100%;
+    aspect-ratio: 1/1;
+  }
+  
+  .merch-btn {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+}
+
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.merch-card {
+  animation: cardAppear 0.6s ease forwards;
+}
+
+/* Модальное окно */
+/* Базовые стили модального окна */
+.popup-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+  backdrop-filter: blur(5px);
+}
+
+.popup-container.active {
+  display: flex;
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup-body {
+  position: relative;
+  background: linear-gradient(145deg, 
+    rgba(255, 255, 255, 0.97),
+    rgba(255, 255, 255, 0.92));
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  padding: 30px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.15);
+  width: 80%;
+  max-width: 900px;
+  backdrop-filter: blur(8px);
+  transform: translateY(-50px);
+  opacity: 0;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+}
+
+.popup-container.active .popup-body {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Заголовки и текст */
+.item-heading,
+.info-block h3, 
+.specs-block h3,
+.item-text {
+  text-align: center;
+}
+
+.item-heading {
+  font-size: 2.2rem;
+  color: #1a202c;
+  margin: 0 0 1rem;
+  line-height: 1.3;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.info-block h3, 
+.specs-block h3 {
+  font-size: 1.1rem;
+  color: #2d3748;
+  margin: 1.5rem 0 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.item-text {
+  color: #4a5568;
+  line-height: 1.6;
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+/* Кнопка закрытия */
+.popup-close {
+  color: #555;
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  z-index: 10;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+}
+
+.popup-close:hover {
+  color: #222;
+  transform: rotate(90deg) scale(1.1);
+  background: rgba(255, 255, 255, 1);
+}
+
+/* Лэйаут контента */
+.popup-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 2rem;
+  padding: 2rem;
+}
+
+/* Секция с изображениями */
+.popup-gallery {
+  position: relative;
+}
+
+.primary-img-wrap {
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.15);
+  aspect-ratio: 1/1;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.featured-image {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  transition: opacity 0.3s ease;
+}
+
+.secondary-thumbs {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  justify-content: center;
+}
+
+.thumb-img {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.thumb-img:hover {
+  transform: translateY(-3px);
+  border-color: rgba(0, 0, 0, 0.1);
+}
+
+.thumb-img.active-thumb {
+  border-color: #2d3748;
+  transform: scale(1.05);
+}
+
+/* Спецификации */
+.specs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.8rem;
+  justify-content: center;
+}
+
+.specs-list li {
+  background: rgba(255, 255, 255, 0.2);
+  color: #2d3748;
+  padding: 0.5rem 1.2rem;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+/* Секция с ценой и кнопкой */
+.popup-actions {
+  margin-top: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  gap: 1rem;
+  flex-wrap: nowrap;
+}
+
+.popup-cost {
+  font-size: 1.8rem;
+  color: #1a202c;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.popup-cart-btn {
+  background: linear-gradient(45deg, #ff9a00, #ff6b6b);
+  color: white;
+  border: none;
+  padding: 1.5rem 3rem;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.2);
+}
+
+.popup-cart-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 107, 0.3);
+  background: linear-gradient(45deg, #ff8f00, #ff6161);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .popup-body {
+    width: 90%;
+    padding: 20px;
+  }
+  
+  .popup-layout {
+    grid-template-columns: 1fr;
+    padding: 1.5rem;
+  }
+  
+  .item-heading {
+    font-size: 1.8rem;
+  }
+  
+  .popup-actions {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .popup-cart-btn {
+    width: 100%;
+    padding: 1.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-body {
+    border-radius: 10px;
+  }
+  
+  .item-heading {
+    font-size: 1.5rem;
+  }
+  
+  .specs-list li {
+    font-size: 0.8rem;
+  }
+  
+  .popup-close {
+    top: 10px;
+    right: 15px;
+    font-size: 28px;
+    width: 35px;
+    height: 35px;
+  }
+}
+
+/* Стили для кнопок мерча */
+.merch-btn {
+  flex: 1;
+  border: none;
+  border-radius: 25px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  font-size: 1.1rem;
+  min-width: 120px;
+}
+
+.details-btn {
+  background: rgba(0, 0, 0, 0.05);
+  color: #333;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.details-btn:hover {
+  background: rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.buy-btn {
+  background: linear-gradient(45deg, #ff9a00, #ff6b6b);
+  color: white;
+  position: relative;
+}
+
+.buy-btn:hover {
+  box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+  transform: translateY(-2px);
+}

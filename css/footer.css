@@ -1,0 +1,205 @@
+/*Обязательно везде*/
+/* Основные стили футера */
+.transparent-footer {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 3rem 2rem;
+  margin-top: 5rem;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  align-items: center;
+}
+
+/* Левая колонка */
+.company-info {
+  position: relative;
+  padding: 1rem;
+}
+
+.company-name {
+  font-size: 2.2rem;
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  margin-bottom: 0.8rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.company-name:hover {
+  color: #ff9a00;
+  transform: scale(1.05);
+  cursor: pointer;
+}
+
+.company-name::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ff9a00;
+  transition: width 0.3s ease;
+}
+
+.company-name:hover::after {
+  width: 100%;
+}
+
+.slogan {
+  color: rgba(255,255,255,0.8);
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.slogan:hover {
+  color: #fff;
+  padding-left: 15px;
+}
+
+.slogan::before {
+  content: '✦';
+  position: absolute;
+  left: -15px;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.slogan:hover::before {
+  left: -5px;
+  opacity: 1;
+  color: #ff9a00;
+}
+
+/* Центральная колонка */
+.footer-logo {
+  display: flex;
+  justify-content: center;
+}
+
+.logo-image {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 12px rgba(0,0,0,0.25));
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid rgba(255,255,255,0.1);
+}
+
+.logo-image:hover {
+  transform: rotate(15deg) scale(1.1);
+  filter: drop-shadow(0 6px 20px rgba(255,152,0,0.2));
+}
+
+/* Правая колонка */
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  margin-left: auto;
+  max-width: 320px;
+}
+
+.contact-line {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  padding: 0.8rem 1.5rem;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.contact-icon {
+  font-size: 1.4rem;
+  min-width: 30px;
+  text-align: center;
+  opacity: 0.8;
+}
+
+.contact-item {
+  color: rgba(255,255,255,0.9);
+  text-decoration: none;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.contact-line:hover {
+  background: rgba(255,152,0,0.1);
+  transform: translateX(10px);
+}
+
+.contact-line:hover .contact-icon {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .footer-container {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2rem;
+  }
+
+  .company-name {
+    font-size: 1.8rem;
+  }
+
+  .logo-image {
+    width: 120px;
+    height: 120px;
+  }
+
+  .contact-info {
+    margin: 0 auto;
+    width: 100%;
+  }
+
+  .contact-line {
+    justify-content: center;
+    text-align: left;
+  }
+
+  .slogan:hover {
+    padding-left: 0;
+  }
+
+  .slogan::before {
+    display: none;
+  }
+}
+
+/* Разделители */
+.footer-column:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  right: -1rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 60%;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(255,255,255,0.2) 50%,
+    transparent 100%
+  );
+}
+
+@media (max-width: 768px) {
+  .footer-column::after {
+    display: none;
+  }
+}

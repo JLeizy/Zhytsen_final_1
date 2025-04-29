@@ -1,0 +1,573 @@
+/* Нейтринная панель */
+.nebula-panel {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Квантовый контейнер с абсолютным центрированием */
+.cryo-container {
+  /* Сохранённые уникальные свойства */
+  border-radius: 24px; /* вместо 28px из примера */
+  padding: 4rem 3rem; /* оригинальные отступы */
+  width: 90%;
+  max-width: 680px; /* отличается от 720px */
+  text-align: center;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  /* Новые стили фона как в location-glass-container */
+  background: rgba(255, 255, 255, 0.12);
+  backdrop-filter: blur(25px) saturate(180%);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 
+      0 24px 60px rgba(0, 0, 0, 0.3),
+      inset 0 6px 24px rgba(255, 255, 255, 0.05);
+}
+
+/* Гравитационный заголовок */
+.stellar-header {
+  font-size: 2.8rem;
+  color: #000000;
+  margin: 0 auto 2rem;
+  width: 100%;
+  text-align: center;
+  letter-spacing: -0.03em;
+  text-shadow: 0 4px 12px rgba(255,165,0,0.3);
+}
+
+/* Пульсирующая кнопка */
+.uni-cta-btn {
+padding: 1.4rem 4.2rem;
+background: linear-gradient(
+    45deg, 
+    rgba(255, 154, 0, 0.9) 0%, 
+    rgba(255, 107, 107, 0.9) 100%
+);
+border: none;
+border-radius: 42px;
+color: white;
+font-size: 1.2rem;
+cursor: pointer;
+transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+position: relative;
+overflow: hidden;
+z-index: 1;
+box-shadow: 
+    0 6px 24px rgba(255, 154, 0, 0.25),
+    0 2px 8px rgba(0, 0, 0, 0.15);
+border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.uni-cta-btn::after {
+content: '';
+position: absolute;
+top: -150%;
+left: -50%;
+width: 200%;
+height: 200%;
+background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.25),
+    transparent
+);
+transform: rotate(25deg);
+transition: 0.6s;
+}
+
+.uni-cta-btn:hover {
+transform: scale(1.06) translateY(-2px);
+box-shadow: 
+    0 8px 32px rgba(255, 154, 0, 0.4),
+    0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.uni-cta-btn:hover::after {
+top: 50%;
+left: 50%;
+}
+
+.uni-cta-btn:active {
+transform: scale(0.96);
+filter: brightness(0.9);
+}
+
+/* Голографический эффект при наведении */
+.phoenix-button:hover {
+  transform: 
+      scale(1.08) 
+      translateY(-3px);
+  box-shadow: 
+      0 12px 32px rgba(255,75,31,0.35),
+      inset 0 0 16px rgba(255,255,255,0.1);
+}
+
+/* Контейнер карты: центрирование и отступ сверху 20px */
+.map-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 150px auto 0; /* 20px сверху, авто по бокам */
+  position: relative;
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+  transform: translateY(0);
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  animation: smooth-appear 0.8s ease-out;
+}
+
+/* Анимация появления контейнера */
+@keyframes smooth-appear {
+  0% {
+      opacity: 0;
+      transform: translateY(20px) scale(0.98);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0) scale(1);
+  }
+}
+
+/* Стилизация карты: соотношение сторон 16:9 с использованием aspect-ratio */
+.centered-map {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: none;
+  filter: saturate(1.05) contrast(1.1) drop-shadow(0 8px 24px rgba(0, 0, 0, 0.08));
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+/* Эффекты при наведении: лёгкое поднятие и усиление теней */
+.map-container:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 28px 56px rgba(0, 0, 0, 0.15);
+}
+
+.map-container:hover .centered-map {
+  filter: saturate(1.15) contrast(1.2) drop-shadow(0 12px 32px rgba(0, 0, 0, 0.12));
+}
+
+/*Делаем блоки*/
+:root {
+--primary-color: #FFA500;
+--secondary-color: #FF4500;
+--heading-color: #111111;
+--text-color: #333333;
+--bg-color: #f4f4f9;
+--card-bg: #ffffff;
+--border-color: #e0e0e0;
+--shadow-color: rgba(0, 0, 0, 0.15);
+--transition-speed: 0.3s;
+--card-radius: 15px;
+--font-family: 'Roboto', sans-serif;
+}
+
+main {
+max-width: 1200px;
+margin: 0 auto;
+padding: 40px;
+}
+
+.route {
+display: flex;
+flex-direction: column;
+gap: 50px;
+margin-top: 60px;
+position: relative;
+}
+
+.route-title {
+text-align: center;
+color: var(--heading-color);
+font-size: 3em;
+text-transform: uppercase;
+letter-spacing: 1px;
+margin-bottom: 20px;
+}
+
+.route::before {
+content: "";
+position: absolute;
+top: -50px;
+left: -50px;
+width: 300px;
+height: 300px;
+background: radial-gradient(circle at center, var(--primary-color), transparent 70%);
+opacity: 0.15;
+z-index: -1;
+}
+
+.row {
+display: flex;
+flex-wrap: wrap;
+gap: 30px;
+justify-content: space-between;
+margin-bottom: 40px;
+padding: 0 30px;
+}
+
+.row-1 .card,
+.row-2 .card {
+flex: 1 1 calc(20% - 30px);
+min-width: 200px;
+}
+
+.row-3 {
+justify-content: center;
+}
+.row-3 .card {
+flex: 1 1 calc(33.33% - 30px);
+min-width: 250px;
+}
+
+.card {
+position: relative;
+/* Изначальный фон – прозрачный градиент */
+background: linear-gradient(145deg, rgba(255,255,255,0.5), rgba(255,255,255,0.3));
+border: 1px solid var(--border-color);
+border-radius: var(--card-radius);
+padding: 30px;
+box-shadow: 0 8px 32px var(--shadow-color);
+display: flex;
+flex-direction: column;
+align-items: center;
+transition: all var(--transition-speed) ease;
+backdrop-filter: blur(10px);
+overflow: hidden;
+}
+
+.card::before {
+content: "";
+position: absolute;
+top: -50%;
+left: -50%;
+width: 200%;
+height: 200%;
+background: linear-gradient(
+  45deg,
+  transparent 20%,
+  rgba(255, 255, 255, 0.1) 50%,
+  transparent 80%
+);
+transform: rotate(45deg);
+transition: all 0.6s ease;
+opacity: 0;
+}
+
+.card:hover::before {
+opacity: 1;
+animation: gradientFlow 3s linear infinite;
+}
+
+@keyframes gradientFlow {
+0% {
+  transform: translate(0, 0) rotate(45deg);
+}
+100% {
+  transform: translate(25%, 25%) rotate(45deg);
+}
+}
+
+/* При наведении плавно меняем фон на более мягкий вариант того же градиента */
+.card:hover {
+transform: translateY(-10px) scale(1.02);
+box-shadow: 0 16px 32px var(--shadow-color);
+background: linear-gradient(145deg, rgba(255,255,255,0.7), rgba(255,255,255,0.55));
+}
+
+.card h2 {
+margin-bottom: 20px;
+font-size: 2em;
+color: var(--heading-color);
+text-transform: uppercase;
+letter-spacing: 1px;
+text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+position: relative;
+text-align: center;
+}
+
+.card h2::after {
+content: "";
+position: absolute;
+left: 50%;
+bottom: -5px;
+transform: translateX(-50%);
+width: 50px;
+height: 4px;
+background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+border-radius: 2px;
+}
+
+.card p {
+margin-bottom: 25px;
+text-align: center;
+line-height: 1.6;
+font-size: 1.1em;
+color: var(--text-color);
+flex-grow: 1;
+}
+
+.card button {
+background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+color: #fff;
+border: none;
+padding: 12px 35px;
+border-radius: 30px;
+font-size: 1.1em;
+cursor: pointer;
+transition: background var(--transition-speed) ease, transform var(--transition-speed) ease;
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+position: relative;
+overflow: hidden;
+}
+
+.card button::before {
+content: "";
+position: absolute;
+top: 0;
+left: -100%;
+width: 100%;
+height: 100%;
+background: rgba(255, 255, 255, 0.2);
+transform: skewX(-45deg);
+transition: left var(--transition-speed) ease;
+}
+
+.card button:hover::before {
+left: 100%;
+}
+
+.card button:hover {
+transform: scale(1.05);
+background: linear-gradient(45deg, var(--secondary-color), var(--primary-color));
+}
+
+.card::after {
+content: "";
+position: absolute;
+bottom: 0;
+left: 0;
+width: 100%;
+height: 8px;
+background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+border-bottom-left-radius: var(--card-radius);
+border-bottom-right-radius: var(--card-radius);
+}
+
+/* Модальное окно */
+.modal {
+display: none;
+position: absolute; /* Изменено с fixed на absolute */
+top: 0; /* Позиционирование относительно родителя */
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.6);
+justify-content: center;
+align-items: center;
+opacity: 0;
+transition: opacity 0.3s ease;
+z-index: 1000;
+}
+
+.modal.show {
+display: flex;
+opacity: 1;
+}
+
+/* Фон модального окна – градиент того же цвета, но без прозрачности */
+.modal-content {
+position: relative;
+background: linear-gradient(145deg, rgba(255,255,255,0.5), rgba(255,255,255,0.3));
+border: 1px solid var(--border-color);
+border-radius: var(--card-radius);
+padding: 30px;
+box-shadow: 0 8px 32px var(--shadow-color);
+width: 80%;
+max-width: 900px;
+backdrop-filter: blur(10px);
+overflow: hidden;
+transform: translateY(-50px);
+transition: transform 0.3s ease;
+text-align: center; /* Центрируем текст внутри модального окна */
+}
+
+.modal.show .modal-content {
+transform: translateY(0);
+}
+
+.modal .close {
+color: #aaa;
+position: absolute;
+top: 15px;
+right: 20px;
+font-size: 2em;
+font-weight: bold;
+cursor: pointer;
+transition: color 0.3s ease;
+}
+
+.modal .close:hover {
+color: #000;
+}
+
+/* Заголовок модального окна */
+.modal-content h2 {
+font-size: 2em;
+color: var(--heading-color);
+margin-bottom: 20px;
+text-align: center; /* Центрируем заголовок */
+}
+
+/* Текстовое описание в модальном окне */
+.modal-content p {
+font-size: 1.1em;
+color: var(--text-color);
+line-height: 1.6;
+text-align: center; /* Центрируем текст */
+margin-bottom: 20px;
+}
+
+/* Блок колонок */
+.modal-columns {
+display: flex;
+gap: 30px;
+margin-top: 20px;
+justify-content: center;
+}
+
+.modal-column {
+flex: 1;
+}
+
+.modal-column h3 {
+font-size: 1.5em;
+color: var(--heading-color);
+margin-bottom: 10px;
+text-align: center;
+}
+
+.modal-column p {
+font-size: 1em;
+text-align: center;
+margin-bottom: 15px;
+}
+
+/* Блок с местами */
+.modal-places {
+margin: 20px 0;
+text-align: center;
+}
+
+.city-label {
+font-size: 1.2em;
+font-weight: bold;
+margin-bottom: 10px;
+}
+
+.places {
+display: inline-block;
+}
+
+.places .place {
+margin: 0 10px;
+font-size: 1em;
+color: var(--heading-color);
+}
+
+/* Блок с изображениями */
+.modal-images {
+display: flex;
+justify-content: center;
+gap: 15px;
+margin-top: 20px;
+}
+
+/* Стилизация картинок: фиксированные размеры и object-fit для любых форматов */
+.modal-images img {
+width: 200px;
+height: 200px;
+object-fit: cover;
+border-radius: 10px;
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+transition: transform 0.3s ease;
+}
+
+.modal-images img:hover {
+transform: scale(1.05);
+}
+
+/* Стили для  баннера с qr-кодом*/
+
+/* Стили для баннера */
+.logi-banner__content-panel {
+background: linear-gradient(
+  145deg,
+  rgba(255, 255, 255, 0.15),
+  rgba(255, 255, 255, 0.05)
+);
+backdrop-filter: blur(12px);
+border-radius: 24px;
+padding: 3rem;
+width: 90%;
+max-width: 560px;
+border: 1px solid rgba(255, 255, 255, 0.2);
+box-shadow: 
+  0 24px 60px rgba(0, 0, 0, 0.1),
+  inset 0 0 16px rgba(255, 255, 255, 0.1);
+}
+
+/* Остальные стили остаются без изменений */
+.logi-banner {
+min-height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+padding: 2rem;
+position: relative;
+}
+
+.logi-banner__frame {
+width: 100%;
+max-width: 1200px;
+margin: 0 auto;
+display: flex;
+justify-content: center;
+}
+
+.logi-banner__primary-heading {
+font: 600 2.4rem/1.2 'Roboto', sans-serif;
+color: #2d3436;
+text-align: center;
+margin: 0 0 2rem 0;
+letter-spacing: -0.02em;
+text-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logi-banner__primary-heading::after {
+content: "";
+display: block;
+width: 60px;
+height: 3px;
+background: linear-gradient(90deg, 
+  rgba(255,165,0,0.8), 
+  rgba(255,69,0,0.8));
+margin: 1.5rem auto 0;
+border-radius: 2px;
+}
+
+.logi-banner__media-wrapper {
+border-radius: 16px;
+overflow: hidden;
+margin: 2rem auto 0;
+box-shadow: 0 12px 32px -8px rgba(0, 0, 0, 0.1);
+border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.logi-banner__dynamic-visual {
+width: 100%;
+height: auto;
+display: block;
+border-radius: 12px;
+}

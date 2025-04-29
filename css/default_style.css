@@ -1,0 +1,24 @@
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+  overflow-y: scroll;
+}
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #ffd8a8, #acb6e5);
+  min-height: 100vh;
+  padding-top: 0px;
+  opacity: 1;
+}
+
+html, body {
+  overflow-x: hidden;
+}

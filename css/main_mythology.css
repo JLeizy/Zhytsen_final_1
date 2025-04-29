@@ -1,0 +1,147 @@
+/* Первая секция - Мифология */
+/* Секция Мифология */
+.mythology-section {
+  position: relative;
+  padding: 8rem 2rem;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(25px);
+  border-radius: 30px;
+  margin: 5rem auto;
+  width: 95%;              /* вместо calc(100% - 40px) */
+  max-width: 1700px;
+  overflow: hidden;        /* запрет внутреннего переполнения */
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 
+    0 8px 32px rgba(0,0,0,0.1),
+    inset 0 4px 12px rgba(255,255,255,0.05);
+}
+
+.mythology-section::before {
+  content: '';
+  position: absolute;
+  top: 0;                  /* убрано смещение и большие размеры */
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    circle at 70% 30%,
+    rgba(168, 255, 216, 0.15) 0%,
+    transparent 40%
+  );
+  transform: none;         /* без поворота */
+  z-index: -1;
+}
+
+/* Заголовок секции */
+.section-title {
+  font-size: 3.2rem;
+  text-align: center;
+  color: #fff;
+  margin-bottom: 4rem;
+  text-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  position: relative;
+  letter-spacing: 2px;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 3px;
+  background: linear-gradient(90deg, #ff9a00, #ff6b6b);
+}
+
+/* Сетка карточек */
+.mythology-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+/* Карточки */
+.myth-card {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  padding: 2.5rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid rgba(255,255,255,0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+.myth-card::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: -100%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255,255,255,0.1),
+    transparent
+  );
+  transition: 0.6s;
+  transform: rotate(45deg);
+}
+
+.myth-card:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateY(-10px);
+  box-shadow: 
+    0 12px 40px rgba(0,0,0,0.2),
+    inset 0 4px 12px rgba(255,255,255,0.1);
+}
+
+.myth-card:hover::after {
+  top: 50%;
+  left: 50%;
+}
+
+/* Иконки */
+.myth-icon {
+  width: 120px;
+  height: 120px;
+  margin: 0 auto 2rem;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.myth-icon img {
+  width: 70%;
+  filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));
+  transition: 0.3s ease;
+}
+
+.myth-card:hover .myth-icon {
+  transform: rotate(15deg) scale(1.1);
+}
+
+/* Текст */
+.myth-card h3 {
+  color: grey;
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+
+.myth-card p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.2rem;
+  line-height: 1.6;
+  text-align: center;
+  margin: 0.5rem 0;
+}
+/*Конец*/

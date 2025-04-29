@@ -1,0 +1,106 @@
+/* Секция с таймером */
+.countdown-section {
+    position: relative;
+    padding: 8rem 2rem;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(25px);
+    border-radius: 30px;
+    margin: 5rem auto;
+    width: calc(100% - 40px);
+    max-width: 1700px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 
+        0 8px 32px rgba(0,0,0,0.1),
+        inset 0 4px 12px rgba(255,255,255,0.05);
+}
+
+.countdown-section::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -30%;
+    width: 160%;
+    height: 160%;
+    background: radial-gradient(
+        circle at 70% 30%,
+        rgba(168, 255, 216, 0.15) 0%,
+        transparent 40%
+    );
+    transform: rotate(15deg);
+    z-index: -1;
+}
+
+.countdown-wrapper {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 3rem auto;
+}
+
+.time-block {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(12px);
+    border-radius: 15px;
+    padding: 2rem;
+    border: 1px solid rgba(154, 205, 141, 0.2);
+    width: 200px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.time-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.time-value {
+    font-size: 3.5rem;
+    color: #e67e22;
+    font-weight: 700;
+    text-shadow: 0 2px 8px rgba(230, 126, 34, 0.3);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.time-label {
+    color: #9ecf8d;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.countdown-description {
+    text-align: center;
+    font-size: 1.4rem;
+    color: rgba(255,255,255,0.9);
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .countdown-wrapper {
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+    
+    .time-block {
+        width: 45%;
+        padding: 1.5rem;
+    }
+    
+    .time-value {
+        font-size: 2.5rem;
+    }
+}
+
+/* Анимации */
+@keyframes numberUpdate {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    50% { transform: translateY(-20px) scale(0.8); opacity: 0; }
+    51% { transform: translateY(20px) scale(0.8); opacity: 0; }
+    100% { transform: translateY(0) scale(1); opacity: 1; }
+}
+
+.time-update {
+    animation: numberUpdate 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
